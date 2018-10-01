@@ -9,7 +9,7 @@
 1. Create a virtualenv and install dependencies (we are gonna use `poetry` as package manager)
 
 ```bash
-poetry add django djangorestframework markdown coreapi drf-yasg
+poetry add django djangorestframework markdown coreapi gunicorn
 ```
 
 ```bash
@@ -123,9 +123,3 @@ poetry run python manage.py startapp customers
 
 1. Run migrations `poetry run python manage.py migrate`
 2. Run server `poetry run python manage.py runserver`
-
-
-### Deploying to heroku
-
-1. login to heroku.com
-2. Go to `New` app
