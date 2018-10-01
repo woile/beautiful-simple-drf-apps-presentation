@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/night.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+  <style>
+    .reveal section img {
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    .left {
+      text-align: left;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    .float-left {
+      float: left;
+    }
+
+    .float-right {
+      float: right;
+    }
+
+    svg {
+      vertical-align: middle
+    }
+
+    .smaller {font-size: 4px;}
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+          ## Building beautiful, simple Restful APIs
+        </textarea>
+      </section>
+      <section>
+        <h2>Who am I?</h2>
+        <aside class="notes">
+          holis
+        </aside>
+
+        <p class="fragment float-left">Santiago Fraire</p>
+        <p class="fragment float-right">Software Engineer</p>
+        <p class="fragment float-right"><img src="./kpn-brands.svg" /></p>
+
+        <p class="fragment float-left brands">
+          <svg width="80" height="80" style="fill: #f5f5f5;">
+            <image xlink:href="twitter-brands.svg" width="80" height="80" />
+          </svg>
+          @santiwilly
+        </p>
+        <p class="fragment float-left">
+          <svg width="80" height="80" style="fill: #f5f5f5;">
+            <image xlink:href="github-brands.svg" width="80" height="80" />
+          </svg>
+          @woile
+        </p>
+
+
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+            ## Overview
+
+            1. HTTP Protocol <!-- .element: class="fragment" -->
+            1. Restful API <!-- .element: class="fragment" -->
+            1. Features of our API <!-- .element: class="fragment" -->
+            1. Django rest framework <!-- .element: class="fragment" -->
+            1. Demo <!-- .element: class="fragment" -->
+          </textarea>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+          ### HTTP
+
+          * Plain text <!-- .element: class="fragment" -->
+          * Verbs (GET, POST, PUT, PATCH, DELETE) <!-- .element: class="fragment" -->
+          * Stateless <!-- .element: class="fragment" -->
+        </textarea>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+          ### Request
+          ```
+          GET /users HTTP/1.1
+          Accept: */*
+          Accept-Encoding: gzip, deflate
+          Connection: keep-alive
+          Host: jsonplaceholder.typicode.com
+          User-Agent: HTTPie/0.9.8
+          ```
+        </textarea>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+          ### Response
+          ```
+          HTTP/1.1 200 OK
+          Cache-Control: public, max-age=14400
+          Content-Encoding: gzip
+          Content-Type: application/json; charset=utf-8
+          Server: cloudflare
+          Set-Cookie: __cfduid=debb64b5c5f0d5d0c73239f5baea4dcb21538321415;
+          X-Powered-By: Express
+
+          [
+              {
+                "first_name": "Jon",
+                "last_name": "Williams",
+                "email": "jon.williams@gmail.com"
+              }
+          ]
+          ```
+
+        </textarea>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+          ## Rest vs Restful
+          <aside class="notes">
+            Rest -> architecture paradigm
+            Restful -> rest for web
+          </aside>
+        </textarea>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+          1. Expose resources
+          1. Resources kind of entities
+          <aside class="notes">
+            Rest -> architecture paradigm
+            Restful -> rest for web
+          </aside>
+        </textarea>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ],
+      markdown: {
+        smartypants: true
+      },
+      history: true
+    });
+  </script>
+</body>
+
+</html>

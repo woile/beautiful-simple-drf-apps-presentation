@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "demo"
+version = "0.1.0"
+description = "A DRF demo"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "*"
+django = "^2.1"
+djangorestframework = "^3.8"
+markdown = "^3.0"
+coreapi = "^2.3"
+drf-yasg = {version = "^1.10", extras = ["validation"]}
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.5"
+mypy = "^0.630.0"
+black = "^18.3-alpha.0"

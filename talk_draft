@@ -1,0 +1,50 @@
+
+REST -> architecture
+Restful -> rest for web
+
+API expose <resources>
+
+resources -> like entities
+
+Need to be exposed!
+
+<resource>/(<id>)?/(action)?/
+
+Restful app -> uses HTTP verbs
+
+GET, POST, PATCH, (PUT), DELETE
+
+list: GET /users/ 200
+create: POST /users/ 201
+retrieve: GET /users/:id/ 200
+partial_update: PATCH /users/:id/ 200
+destroy: DELETE /users/:id/ 200
+action: <METHOD> /users/export
+/campaigns/<id>/export
+
+Avoid nested routes
+
+DRF
+
+router + viewset = 🧡
+
+All this resful concepts are automatically managed using routers and viewsets
+
+1. Viewset
+2. Router (simple router)
+
+url
+
+We have an app
+
+Documentation
+
+OpenAPI
+
+Add to the code API
+
+
+Deploying to heroku!
+
+Documented restful api up and running.
+

@@ -1,0 +1,18 @@
+{
+  "name": "pyss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "revealer --start",
+    "serve": "revealer --serve",
+    "build": "revealer --build build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "reveal.js": "^3.7.0",
+    "revealer": "^2.1.3"
+  }
+}
