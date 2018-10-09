@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>reveal.js</title>
+  <title>Building beautiful restful APIs</title>
 
   <link rel="stylesheet" href="css/reveal.css">
   <link rel="stylesheet" href="css/theme/night.css">
@@ -48,7 +48,9 @@
       vertical-align: middle
     }
 
-    .smaller {font-size: 4px;}
+    .smaller {
+      font-size: 4px;
+    }
   </style>
 </head>
 
@@ -67,59 +69,69 @@
         </aside>
 
         <p class="fragment float-left">Santiago Fraire</p>
-        <p class="fragment float-right">Software Engineer</p>
-        <p class="fragment float-right"><img src="./kpn-brands.svg" /></p>
-
-        <p class="fragment float-left brands">
-          <svg width="80" height="80" style="fill: #f5f5f5;">
-            <image xlink:href="twitter-brands.svg" width="80" height="80" />
-          </svg>
-          @santiwilly
-        </p>
-        <p class="fragment float-left">
-          <svg width="80" height="80" style="fill: #f5f5f5;">
-            <image xlink:href="github-brands.svg" width="80" height="80" />
-          </svg>
-          @woile
-        </p>
-
-
+        <div class="fragment">
+          <p class=" float-right">Software Engineer</p>
+          <p class=" float-right"><img src="./kpn-brands.svg" /></p>
+        </div>
+        <div class="fragment">
+          <p class="float-left brands">
+            <svg width="80" height="80" style="fill: #f5f5f5;">
+              <image xlink:href="twitter-brands.svg" width="80" height="80" />
+            </svg>
+            <a href="https://twitter.com/santiwilly">@santiwilly</a>
+          </p>
+          <p class="float-left">
+            <svg width="80" height="80" style="fill: #f5f5f5;">
+              <image xlink:href="github-brands.svg" width="80" height="80" />
+            </svg>
+            <a href="https://www.github.com/woile">@woile</a>
+          </p>
+          <p class="float-right">I love open source</p>
+        </div>
       </section>
       <section data-markdown>
         <textarea data-template>
-            ## Overview
+          ## Journey
 
-            1. HTTP Protocol <!-- .element: class="fragment" -->
-            1. Restful API <!-- .element: class="fragment" -->
-            1. Features of our API <!-- .element: class="fragment" -->
-            1. Django rest framework <!-- .element: class="fragment" -->
-            1. Demo <!-- .element: class="fragment" -->
-          </textarea>
+          1. HTTP Protocol <!-- .element: class="fragment" -->
+          1. Restful API <!-- .element: class="fragment" -->
+          1. What do I want of an API? <!-- .element: class="fragment" -->
+          1. Django Rest Framework <!-- .element: class="fragment" -->
+          1. Demo <!-- .element: class="fragment" -->
+        </textarea>
       </section>
-      <section data-markdown>
-        <textarea data-template>
+      <section>
+        <section data-markdown>
+          <textarea data-template>
           ### HTTP
 
+          * Protocol -> Something everyone agreed on <!-- .element: class="fragment" -->
           * Plain text <!-- .element: class="fragment" -->
           * Verbs (GET, POST, PUT, PATCH, DELETE) <!-- .element: class="fragment" -->
-          * Stateless <!-- .element: class="fragment" -->
+          * Status codes <!-- .element: class="fragment" -->
+
+          <aside class="notes">
+            verbs -> what is my desired action
+          </aside>
         </textarea>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
           ### Request
+
+          ```
+          curl 'https://jsonplaceholder.typicode.com/users'
+          ```
+
           ```
           GET /users HTTP/1.1
-          Accept: */*
           Accept-Encoding: gzip, deflate
-          Connection: keep-alive
           Host: jsonplaceholder.typicode.com
-          User-Agent: HTTPie/0.9.8
           ```
         </textarea>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
           ### Response
           ```
           HTTP/1.1 200 OK
@@ -138,28 +150,218 @@
               }
           ]
           ```
+        </textarea>
+        </section>
+      </section>
+      <section>
+        <h2>Rest and Restful</h2>
+        <aside class="notes">
+          Roy Fielding
+          Rest -> architecture paradigm
+          Restful -> web services complying with rest
+          Lookups use GET, POST, etc
+        </aside>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+          ### Main idea
 
+          Perform operations over resources
         </textarea>
       </section>
       <section data-markdown>
         <textarea data-template>
-          ## Rest vs Restful
-          <aside class="notes">
-            Rest -> architecture paradigm
-            Restful -> rest for web
-          </aside>
+          ### How to identify a Resource?
+
+          ## Use URLs <!-- .element: class="fragment" -->
+          </textarea>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+          ### How to express the operation?
+
+          ## Using HTTP Verbs <!-- .element: class="fragment" -->
         </textarea>
       </section>
       <section data-markdown>
         <textarea data-template>
-          1. Expose resources
-          1. Resources kind of entities
+          ```
+          GET domain.com/{resource}/({id})?/
+          ```
+
+          ```
+          GET domain.com/users/
+          ```
+        </textarea>
+      </section>
+      <section>
+        <h2>What are resources?</h2>
+
+        <p class="float-left"><img width="400" src="./pandas.gif" alt="animals" /></p>
+        <p class="float-right"><img width="300" src="./cars.gif" alt="car" /></p>
+        <p class="fragment">entities</p>
+        <p class="fragment">nouns</p>
+        <aside class="notes">
+          Nouns over verbs (actions)
+
+          ABSTRACTIONS: animals over pandas, vehicle over car
+          abstractions must have common attributes
+        </aside>
+      </section>
+      <section>
+        <h2>Operations</h2>
+
+        <div class="fragment float-left left">GET </div>
+        <div class="fragment float-right">list (retrieve) </div>
+
+        <br />
+        <div class="fragment float-left left">POST </div>
+        <div class="fragment float-right">create</div>
+
+        <br />
+        <div class="fragment float-left left">PUT/PATCH </div>
+        <div class="fragment float-right">update (partial_update) </div>
+
+        <br />
+        <div class="fragment float-left left">DELETE </div>
+        <div class="fragment float-right">destroy </div>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+
+        ## JSON RPC
+
+        ```
+        {
+          "jsonrpc": "2.0",
+          "method": "create_user",
+          "params": {"first_name": "Jon", "last_name": "Dow"}
+        }
+        ```
+
+        ## REST
+        ```
+        POST /users/
+
+        {
+          "first_name": "Jon",
+          "last_name": "Dow"
+        }
+        ```
+
+        <aside class="notes">
+          Rest is closer to the protocol (HTTP)
+        </aside>
+        </textarea>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+          ### What do I want from an API?
+
+          1. RESTFul
+          1. Easy to add features and mantain
+          1. Tests
+          1. Documentation! (interactive please)
+        </textarea>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+        ## Django Rest Framework
+        ### Serializers <!-- .element: class="fragment" -->
+        ### ViewSets <!-- .element: class="fragment" -->
+        ### Routers <!-- .element: class="fragment" -->
+        </textarea>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+          ### ModelSerializers
+
+          ```
+          # serializers.py
+          from django.contrib.auth.models import User
+          from rest_framework import serializers
+
+          class CustomerSerializer(serializers.ModelSerializer):
+
+              class Meta:
+                  model = User
+                  fields = ('username', 'email', 'first_name', 'last_name')
+
+          ```
           <aside class="notes">
-            Rest -> architecture paradigm
-            Restful -> rest for web
+            Validation
+            serialization into json/xml
+            deserialization to complex datatypes
           </aside>
         </textarea>
       </section>
+      <section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ### ModelViewSet + Routers = ❤️
+
+          <aside class="notes">
+          Key feature to make a rest api
+          super easy to achive
+          </aside>
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ### ViewSets
+            ```
+            class UserViewSet(viewsets.ViewSet):
+              def list(self, request):
+                  pass
+              def create(self, request):
+                  pass
+              def retrieve(self, request, pk=None):
+                  pass
+              def update(self, request, pk=None):
+                  pass
+              def partial_update(self, request, pk=None):
+                  pass
+              def destroy(self, request, pk=None):
+                  pass
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+          ```
+          # views.py
+          from django.contrib.auth.models import User
+          from rest_framework import viewsets
+          from .serializers import CustomerSerializer
+
+
+          class CustomerViewSet(viewsets.ModelViewSet):
+              queryset = User.objects.all()
+              serializer_class = CustomerSerializer
+
+          ```
+          ```
+          # urls.py
+          router = routers.SimpleRouter()
+          router.register(r'customers', CustomerViewSet)
+          ```
+          <aside class="notes">
+          modelviewset provides the implementation
+          routers provides the rest mapping
+          </aside>
+          </textarea>
+        </section>
+    </section>
+    <section>
+      <h3>DEMO TIME</h3>
+      <p ><img width="400" src="./fuck_yea.gif" alt="animals" /></p>
+    </section>
+    <section>
+      <h3>Thank you!</h3>
+      <h3>Questions?</h3>
+      <p ><img width="400" src="./questions.gif" alt="animals" /></p>
+    </section>
     </div>
   </div>
 
