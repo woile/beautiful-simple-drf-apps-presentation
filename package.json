@@ -6,12 +6,14 @@
   "scripts": {
     "start": "revealer --start",
     "serve": "revealer --serve",
-    "build": "revealer --build build"
+    "build": "revealer --build build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "reveal.js": "^3.7.0",
     "revealer": "^2.1.3"
   }
