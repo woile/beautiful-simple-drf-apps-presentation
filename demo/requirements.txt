@@ -1,0 +1,9 @@
+black==18.9b0
+coreapi==2.3.3
+ipython==7.0.1
+Django==2.1.2
+djangorestframework==3.8.2
+drf-yasg==1.10.2
+flake8==3.5.0
+Markdown==3.0.1
+mypy==0.630

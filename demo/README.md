@@ -4,24 +4,42 @@
 
 ## Tutorial
 
+**WARNING: USE PYTHON 3 ONLY!!**
+
 ### Setting everything up
 
 For this demo we are gonna use `poetry` as package manager. [Installation guide](https://poetry.eustace.io/docs/#installation)
 
+You can also use `pip` with `virtualenv`. A `requirements.txt` is provided.
+
 1. Create a virtualenv and install dependencies
 
 ```bash
-poetry add django djangorestframework markdown coreapi gunicorn
+poetry add django djangorestframework markdown coreapi
 ```
 
 ```bash
 poetry add flake8 mypy --dev
 ```
 
+Or the traditional way:
+
+```bash
+python -m venv venv
+. venv/bin/activate
+pip install -r requirements.txt
+```
+
 2. Create a django project
 
 ```bash
 poetry run django-admin.py demo .
+```
+
+Or the traditional way:
+
+```bash
+django-admin.py demo .
 ```
 
 3. Add DRF to installed apps
@@ -111,8 +129,14 @@ We are gonna supouse we are working with `customers`
 
 1. Create a new app
 
-```
+```bash
 poetry run python manage.py startapp customers
+```
+
+Or the traditional way:
+
+```bash
+python manage.py startapp customers
 ```
 
 2. Add a `CustomerSerializer` to `customer.serializers.py` (create the file if it doesn't exist)

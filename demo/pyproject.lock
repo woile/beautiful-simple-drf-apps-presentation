@@ -248,15 +248,6 @@ python = ">=2.7,<2.8"
 
 [[package]]
 category = "main"
-description = "WSGI HTTP Server for UNIX"
-name = "gunicorn"
-optional = false
-platform = "*"
-python-versions = ">=2.6, !=3.0.*, !=3.1.*"
-version = "19.9.0"
-
-[[package]]
-category = "main"
 description = "Internationalized Domain Names in Applications (IDNA)"
 name = "idna"
 optional = false
@@ -765,7 +756,7 @@ platform = "win32"
 python = "<3.6"
 
 [metadata]
-content-hash = "4f137cecd06db24b04520cfd943d45398a1b70596e2c918717b10b1641bc017a"
+content-hash = "3b564ccd7d4b3945f95fa7b7b265aa50b016aaa2607bb0c55d19c2a112f80314"
 platform = "*"
 python-versions = "*"
 
@@ -790,7 +781,6 @@ enum34 = ["2d81cbbe0e73112bdfe6ef8576f2238f2ba27dd0d55752a776c41d38b7da2850", "6
 flake8 = ["7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0", "c7841163e2b576d435799169b78703ad6ac1bbb0f199994fc05f700b2a90ea37"]
 flex = ["b12403eba2a0499fbbc9f39ea846a3a580c05620efd386e042055a26ec4c37b0", "c7713c55efca07aef81c93db639590b5df2c5bf1f2e29c089e57d3137330109e"]
 functools32 = ["89d824aa6c358c421a234d7f9ee0bd75933a67c29588ce50aaa3acdf4d403fa0", "f6253dfbe0538ad2e387bd8fdfd9293c925d63553f5813c4e587745416501e6d"]
-gunicorn = ["aa8e0b40b4157b36a5df5e599f45c9c76d6af43845ba3b3b0efe2c70473c2471", "fa2662097c66f920f53f70621c6c58ca4a3c4d3434205e608e121b5b3b71f4f3"]
 idna = ["156a6814fb5ac1fc6850fb002e0852d56c0c8d2531923a51032d1b70760e186e", "684a38a6f903c1d71d6d5fac066b58d7768af4de2b832e426ec79c30daa94a16"]
 inflection = ["18ea7fb7a7d152853386523def08736aa8c32636b047ade55f7578c4edeb16ca"]
 ipython = ["47b17ea874454a5c2eacc2732b04a750d260b01ba479323155ac8a39031f5535", "9fed506c3772c875a3048bc134a25e6f5e997b1569b2636f6a5d891f34cbfd46"]
