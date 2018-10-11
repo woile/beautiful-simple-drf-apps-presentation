@@ -109,6 +109,7 @@
           * Plain text <!-- .element: class="fragment" -->
           * Verbs (GET, POST, PUT, PATCH, DELETE) <!-- .element: class="fragment" -->
           * Status codes <!-- .element: class="fragment" -->
+          * Request/Response cycle <!-- .element: class="fragment" -->
 
           <aside class="notes">
             verbs -> what is my desired action
@@ -173,7 +174,7 @@
         <textarea data-template>
           ### How to identify a Resource?
 
-          ## Use URLs <!-- .element: class="fragment" -->
+          ## Using URLs <!-- .element: class="fragment" -->
           </textarea>
       </section>
       <section data-markdown>
@@ -185,6 +186,8 @@
       </section>
       <section data-markdown>
         <textarea data-template>
+          #### Example
+
           ```
           GET domain.com/{resource}/({id})?/
           ```
@@ -201,6 +204,10 @@
         <p class="float-right"><img width="300" src="./cars.gif" alt="car" /></p>
         <p class="fragment">entities</p>
         <p class="fragment">nouns</p>
+        <br/>
+        <br/>
+        <br/>
+        <p class="fragment">find the right abstraction</p>
         <aside class="notes">
           Nouns over verbs (actions)
 
@@ -212,7 +219,7 @@
         <h2>Operations</h2>
 
         <div class="fragment float-left left">GET </div>
-        <div class="fragment float-right">list (retrieve) </div>
+        <div class="fragment float-right">list and retrieve </div>
 
         <br />
         <div class="fragment float-left left">POST </div>
@@ -220,7 +227,7 @@
 
         <br />
         <div class="fragment float-left left">PUT/PATCH </div>
-        <div class="fragment float-right">update (partial_update) </div>
+        <div class="fragment float-right">update and partial_update </div>
 
         <br />
         <div class="fragment float-left left">DELETE </div>
@@ -258,10 +265,17 @@
         <textarea data-template>
           ### What do I want from an API?
 
-          1. RESTFul
+          1. [RESTFul](https://www.django-rest-framework.org/)
           1. Easy to add features and mantain
-          1. Tests
-          1. Documentation! (interactive please)
+          1. [Tests](https://www.django-rest-framework.org/api-guide/testing/)
+          1. [Documentation! (interactive please)](https://www.django-rest-framework.org/topics/documenting-your-api/)
+          1. [Versioning](https://www.django-rest-framework.org/api-guide/versioning/)
+          1. [Proper use of status code](https://www.django-rest-framework.org/api-guide/status-codes/)
+
+          <aside class="notes">
+            Versioning: use queryparam, header, path, hostname. Enforce one policy.
+          </aside>
+
         </textarea>
       </section>
       <section data-markdown>
@@ -352,6 +366,46 @@
           </aside>
           </textarea>
         </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```
+            In [2]: router.urls
+            Out[2]:
+            [<URLPattern '^customers/$' [name='user-list']>,
+            <URLPattern '^customers/(?P<pk>[^/.]+)/$' [name='user-detail']>]
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            | HTTP Method | URL | action |
+            |-------------|-----|--------|
+            | **GET** | customers/ | list |
+            | **POST** | customers/ | create |
+            | **GET** | customers/:id/ | retrieve |
+            | **PUT** | customers/:id/ | update |
+            | **PATCH** | customers/:id/ | partial_update |
+            | **DELETE** | customers/:id/ | destroy |
+          </textarea>
+        </section>
+    </section>
+    <section>
+      <section>
+        <h2>Documentation</h2>
+      </section>
+      <section>
+          <h3>Automatic queryparams doc</h3>
+          <h2 class="fragment"><a href="https://github.com/carltongibson/django-filter">Django filters</a></h2>
+      </section>
+      <section>
+          <h3>Automatic body doc</h3>
+          <h2 class="fragment"><a href="https://www.django-rest-framework.org/api-guide/serializers/">DRF Serializers</a></h2>
+      </section>
+      <section>
+        <h2>Future</h2>
+        <p>DRF Community => OpenAPI</p>
+        <p>light dynamic clients (apistar)</p>
+      </section>
     </section>
     <section>
       <h3>DEMO TIME</h3>
