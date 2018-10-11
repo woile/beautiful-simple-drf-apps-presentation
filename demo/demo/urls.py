@@ -24,6 +24,6 @@ router.register(r'customers', CustomerViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('docs/', include_docs_urls(title='PYSS 2018')),
-    re_path(r'^openapi(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    re_path(r'^schema(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^openapi/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ] + router.urls
