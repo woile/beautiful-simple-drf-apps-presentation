@@ -6,7 +6,9 @@
 
 ### Setting everything up
 
-1. Create a virtualenv and install dependencies (we are gonna use `poetry` as package manager)
+For this demo we are gonna use `poetry` as package manager. [Installation guide](https://poetry.eustace.io/docs/#installation)
+
+1. Create a virtualenv and install dependencies
 
 ```bash
 poetry add django djangorestframework markdown coreapi gunicorn
