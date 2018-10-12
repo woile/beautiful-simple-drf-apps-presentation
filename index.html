@@ -208,7 +208,7 @@
         <p class="float-right"><img width="300" src="./cars.gif" alt="car" /></p>
         <p class="fragment">entities</p>
         <p class="fragment">nouns</p>
-        <br />
+        <p class="fragment">models</p>
         <br />
         <br />
         <p class="fragment">find the right abstraction</p>
@@ -244,45 +244,50 @@
           <div class="float-right">destroy </div>
         </div>
       </section>
-      <section data-markdown>
-        <textarea data-template>
+      <section>
+        <section>
+          <img src="./drake.jpg" alt="drake" />
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```
+            /createCustomer
+            ```
 
-        ## JSON RPC
+            could be expressed as
+            ```
+            POST /customers/
 
-        ```
-        {
-          "jsonrpc": "2.0",
-          "method": "create_user",
-          "params": {"first_name": "Jon", "last_name": "Dow"}
-        }
-        ```
+            {...}
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```
+            /activateCustomer
+            ```
 
-        ## REST
-        ```
-        POST /users/
+            could be expressed as
+            ```
+            PATCH /customers/1
 
-        {
-          "first_name": "Jon",
-          "last_name": "Dow"
-        }
-        ```
-
-        <aside class="notes">
-          Rest is closer to the protocol (HTTP)
-        </aside>
-        </textarea>
+            {active: true}
+            ```
+          </textarea>
+        </section>
       </section>
       <section data-markdown>
         <textarea data-template>
           ### What do I want from an API?
 
           1. [RESTFul](https://www.django-rest-framework.org/)
-          1. Easy to add features and mantain
-          1. [Tests](https://www.django-rest-framework.org/api-guide/testing/)
+          1. [Easy to test](https://www.django-rest-framework.org/api-guide/testing/)
           1. [Documentation! (interactive please)](https://www.django-rest-framework.org/topics/documenting-your-api/)
           1. [Versioning](https://www.django-rest-framework.org/api-guide/versioning/)
           1. [Proper use of status code](https://www.django-rest-framework.org/api-guide/status-codes/)
-
+          1. Loose coupling & high cohesion
+          1. Avoid premature optimization
           <aside class="notes">
             <p>Versioning: use queryparam, header, path, hostname. </p>
             <p>Enforce one policy.</p>
@@ -427,6 +432,15 @@
         <h3>Thank you!</h3>
         <h3>Questions?</h3>
         <p><img width="400" src="./questions.gif" alt="animals" /></p>
+      </section>
+      <section>
+        <h3>Explore alternatives</h3>
+        <ul>
+          <li>Protocol Buffers</li>
+          <li>Json RPC</li>
+          <li>HATEOAS</li>
+        </ul>
+        <aside class="notes">Rest using HATEOAS</aside>
       </section>
     </div>
   </div>
