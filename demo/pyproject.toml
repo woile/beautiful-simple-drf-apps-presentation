@@ -5,7 +5,7 @@ description = "A DRF demo"
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "*"
+python = ">=3.6"
 django = "^2.1"
 djangorestframework = "^3.8"
 markdown = "^3.0"

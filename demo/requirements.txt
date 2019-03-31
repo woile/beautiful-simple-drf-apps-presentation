@@ -1,9 +1,15 @@
-black==18.9b0
-coreapi==2.3.3
-ipython==7.0.1
-Django==2.1.2
-djangorestframework==3.8.2
-drf-yasg==1.10.2
-flake8==3.5.0
-Markdown==3.0.1
-mypy==0.630
+coreapi==2.3.3 \
+    --hash=sha256:46145fcc1f7017c076a2ef684969b641d18a2991051fddec9458ad3f78ffc1cb \
+    --hash=sha256:bf39d118d6d3e171f10df9ede5666f63ad80bba9a29a8ec17726a66cf52ee6f3
+django==2.1.7 \
+    --hash=sha256:275bec66fd2588dd517ada59b8bfb23d4a9abc5a362349139ddda3c7ff6f5ade \
+    --hash=sha256:939652e9d34d7d53d74d5d8ef82a19e5f8bb2de75618f7e5360691b6e9667963
+djangorestframework==3.9.2 \
+    --hash=sha256:8a435df9007c8b7d8e69a21ef06650e3c0cbe0d4b09e55dd1bd74c89a75a9fcd \
+    --hash=sha256:f7a266260d656e1cf4ca54d7a7349609dc8af4fe2590edd0ecd7d7643ea94a17
+drf-yasg==1.14.0 \
+    --hash=sha256:a276bc90af1902b1bd9c11927f75658da1a62aad2d87022ae5f653106ed09a17 \
+    --hash=sha256:ca17555127f8ac59d51c2bf721eff83b46ae20a8626c033f186a4c4d7d6053f4
+markdown==3.1 \
+    --hash=sha256:fc4a6f69a656b8d858d7503bda633f4dd63c2d70cf80abdc6eafa64c4ae8c250 \
+    --hash=sha256:fe463ff51e679377e3624984c829022e2cfb3be5518726b06f608a07a3aad680
