@@ -11,3 +11,5 @@ yarn start
 ```
 
 Enjoy.
+
+[DRF Demo](https://github.com/Woile/beautiful-simple-drf-apps/tree/master/demo)
