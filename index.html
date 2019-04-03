@@ -1,112 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Building beautiful restful APIs</title>
 
-  <title>Building beautiful restful APIs</title>
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/night.css" />
 
-  <link rel="stylesheet" href="css/reveal.css">
-  <link rel="stylesheet" href="css/theme/night.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
 
-  <!-- Theme used for syntax highlighting of code -->
-  <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+    <style>
+      .reveal section img {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
 
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-    document.getElementsByTagName('head')[0].appendChild(link);
-  </script>
-  <style>
-    .reveal section img {
-      background: none;
-      border: none;
-      box-shadow: none;
-    }
+      .left {
+        text-align: left;
+      }
 
-    .left {
-      text-align: left;
-    }
+      .right {
+        text-align: right;
+      }
 
-    .right {
-      text-align: right;
-    }
+      .float-left {
+        float: left;
+      }
 
-    .float-left {
-      float: left;
-    }
+      .float-right {
+        float: right;
+      }
 
-    .float-right {
-      float: right;
-    }
+      .vertial-align {
+        vertical-align: middle !important;
+      }
 
-    svg {
-      vertical-align: middle
-    }
+      svg {
+        vertical-align: middle;
+      }
 
-    .smaller {
-      font-size: 4px;
-    }
-  </style>
-</head>
+      .smaller {
+        font-size: 4px;
+      }
+    </style>
+  </head>
 
-<body>
-  <div class="reveal">
-    <div class="slides">
-      <section data-markdown>
-        <textarea data-template>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
           ## Building beautiful, simple Restful APIs
 
           <aside class="notes">
             <p>Objective: building pretty rest api </p>
         </aside>
-        </textarea>
-      </section>
-      <section>
-        <h2>Who am I?</h2>
-        <aside class="notes">
-          holis
-        </aside>
+        </textarea
+          >
+        </section>
+        <section>
+          <h2>Who am I?</h2>
+          <aside class="notes">
+            holis
+          </aside>
 
-        <p class="fragment float-left">Santiago Fraire</p>
-        <div class="fragment">
-          <p class=" float-right">Software Engineer</p>
-          <p class=" float-right"><img src="./kpn-brands.svg" /></p>
-        </div>
-        <div class="fragment">
-          <p class="float-left brands">
-            <svg width="80" height="80" style="fill: #f5f5f5;">
-              <image xlink:href="twitter-brands.svg" width="80" height="80" />
-            </svg>
-            <a href="https://twitter.com/santiwilly">@santiwilly</a>
-          </p>
-          <p class="float-left">
-            <svg width="80" height="80" style="fill: #f5f5f5;">
-              <image xlink:href="github-brands.svg" width="80" height="80" />
-            </svg>
-            <a href="https://www.github.com/woile">@woile</a>
-          </p>
-          <p class="float-right">I love open source</p>
-        </div>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
-          ## Journey
+          <p>Santiago Fraire</p>
 
-          1. HTTP Protocol <!-- .element: class="fragment" -->
-          1. Restful API <!-- .element: class="fragment" -->
-          1. What do I want from an API? <!-- .element: class="fragment" -->
-          1. Django Rest Framework <!-- .element: class="fragment" -->
-          1. Demo <!-- .element: class="fragment" -->
-        </textarea>
-      </section>
-      <section>
+          <strong >Open source enthusiast</strong>
+          <div class="fragment">
+            <p >
+              Software Engineer @
+              <img class="vertial-align" height="80" src="./kpn-brands.svg" />
+            </p>
+          </div>
+        </section>
         <section data-markdown>
           <textarea data-template>
+          ## Journey
+
+          1. HTTP Protocol
+          1. Restful API
+          1. What do I expect from an API?
+          1. Django Rest Framework
+          1. Demo
+        </textarea
+          >
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
           ### HTTP
 
           * Protocol -> Something everyone agreed on <!-- .element: class="fragment" -->
@@ -115,13 +114,16 @@
           * Status codes <!-- .element: class="fragment" -->
           * Request/Response cycle <!-- .element: class="fragment" -->
 
+          . <!-- .element: class="fragment" -->
+
           <aside class="notes">
             verbs -> what is my desired action
           </aside>
-        </textarea>
-        </section>
-        <section data-markdown>
-          <textarea data-template>
+        </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
           ### Request
 
           ```
@@ -133,10 +135,11 @@
           Accept-Encoding: gzip, deflate
           Host: jsonplaceholder.typicode.com
           ```
-        </textarea>
-        </section>
-        <section data-markdown>
-          <textarea data-template>
+        </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
           ### Response
           ```
           HTTP/1.1 200 OK
@@ -155,101 +158,201 @@
               }
           ]
           ```
-        </textarea>
+        </textarea
+            >
+          </section>
         </section>
-      </section>
-      <section>
-        <h2>Rest and Restful</h2>
-        <aside class="notes">
-          <p> Roy Fielding</p>
-          <p>Rest -> architecture paradigm</p>
-          <p>Restful -> web services complying with rest</p>
-          <p>Lookups use GET, POST, etc</p>
-        </aside>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
+        <section>
+          <h2>Rest and Restful</h2>
+          <img width="400" src="./samesame.gif" alt="animals" />
+          <aside class="notes">
+            <p>Roy Fielding</p>
+            <p>Rest -> architecture paradigm</p>
+            <p>Restful -> web services complying with rest</p>
+            <p>Lookups use GET, POST, etc</p>
+          </aside>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
           ### Main idea
 
           Perform operations over resources
-        </textarea>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
+        </textarea
+          >
+        </section>
+        <section>
+          <h2>What are resources?</h2>
+          <div class="fragment">
+            <p class="float-left">
+              <img width="400" src="./pandas.gif" alt="animals" />
+            </p>
+            <p class="float-right">
+              <img width="300" src="./cars.gif" alt="car" />
+            </p>
+            <p>entities</p>
+            <p>nouns</p>
+            <p>models</p>
+          </div>
+          <br />
+          <br />
+          <p class="fragment">find the right abstraction</p>
+          <aside class="notes">
+            <p>Nouns over verbs (actions)</p>
+            <p>ABSTRACTIONS: animals over pandas, vehicle over car</p>
+            <p>abstractions must have common attributes/methods</p>
+          </aside>
+        </section>
+        <section>
+          <h2>What are the operations?</h2>
+
+          <div class="fragment">
+            <h4>List / Retrieve</h4>
+
+            <h4>Create</h4>
+
+            <h4>Update / Partial Update</h4>
+
+            <h4>Destroy</h4>
+          </div>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
           ### How to identify a Resource?
 
           ## Using URLs <!-- .element: class="fragment" -->
           </textarea>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
           ### How to express the operation?
 
           ## Using HTTP Verbs <!-- .element: class="fragment" -->
-        </textarea>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
-          #### Example
+        </textarea
+            >
+          </section>
+          <section>
+            <div class="float-left left">List / Retrieve</div>
+            <div class="float-right ">GET</div>
 
-          ```
-          GET domain.com/{resource}/({id})?/
-          ```
+            <br />
 
-          ```
-          GET domain.com/users/
-          ```
-        </textarea>
-      </section>
-      <section>
-        <h2>What are resources?</h2>
+            <div class="float-left left">Create</div>
+            <div class="float-right ">POST</div>
 
-        <p class="float-left"><img width="400" src="./pandas.gif" alt="animals" /></p>
-        <p class="float-right"><img width="300" src="./cars.gif" alt="car" /></p>
-        <p class="fragment">entities</p>
-        <p class="fragment">nouns</p>
-        <p class="fragment">models</p>
-        <br />
-        <br />
-        <p class="fragment">find the right abstraction</p>
-        <aside class="notes">
-          <p>Nouns over verbs (actions)</p>
-          <p>ABSTRACTIONS: animals over pandas, vehicle over car</p>
-          <p>abstractions must have common attributes/methods</p>
-        </aside>
-      </section>
-      <section>
-        <h2>Operations</h2>
+            <br />
 
-        <div class="fragment">
-          <div class="float-left left">GET </div>
-          <div class="float-right">list and retrieve </div>
-        </div>
+            <div class="float-left left">Update / Partial Update</div>
+            <div class="float-right ">PUT/PATCH</div>
 
-        <br />
-        <div class="fragment">
-          <div class="float-left left">POST </div>
-          <div class="float-right">create</div>
-        </div>
+            <br />
 
-        <br />
-        <div class="fragment">
-          <div class="float-left left">PUT/PATCH </div>
-          <div class="float-right">update and partial_update </div>
-        </div>
-
-        <br />
-        <div class="fragment">
-          <div class="float-left left">DELETE </div>
-          <div class="float-right">destroy </div>
-        </div>
-      </section>
-      <section>
-        <section>
-          <img src="./drake.jpg" alt="drake" />
+            <div class="float-left left">Destroy</div>
+            <div class="float-right ">DELETE</div>
+          </section>
         </section>
-        <section data-markdown>
-          <textarea data-template>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              #### Examples
+
+              ```
+              <HTTP_METHOD> domain.com/{resource}/({id})?/
+              ```
+
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                #### List of customers
+
+                ```
+                GET domain.com/customers/
+                ```
+
+                ```
+                200 OK
+
+                [
+                  {"name": "willy"},
+                  {"name": "morty"}
+                ]
+                ```
+              </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                  #### Retrieve single customer
+
+                  ```
+                  GET domain.com/customers/1/
+                  ```
+
+                  ```
+                  200 OK
+
+                  {"name": "willy"}
+                  ```
+                </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+                    #### Create a customer
+
+                    ```
+                    POST domain.com/customers/
+
+                    {
+                      "name": "willy",
+                      "likes_burritos": true,
+                      "likes_pineapple_pizza": true
+                    }
+                    ```
+
+                    ```
+                    201 CREATED
+
+                    {
+                      "name": "willy",
+                      "likes_burritos": true,
+                      "likes_pineapple_pizza": true
+                    }
+                    ```
+                  </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              #### Update customer
+
+              ```
+              PATCH domain.com/customers/1
+
+              {
+                "likes_pineapple_pizza": false
+              }
+              ```
+
+              ```
+              200 OK
+
+              {
+                "name": "willy",
+                "likes_burritos": true,
+                "likes_pineapple_pizza": false
+              }
+              ```
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="./drake.jpg" alt="drake" />
+          </section>
+          <section data-markdown>
+            <textarea data-template>
             ```
             /createCustomer
             ```
@@ -260,10 +363,11 @@
 
             {...}
             ```
-          </textarea>
-        </section>
-        <section data-markdown>
-          <textarea data-template>
+          </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
             ```
             /activateCustomer
             ```
@@ -274,11 +378,12 @@
 
             {active: true}
             ```
-          </textarea>
+          </textarea
+            >
+          </section>
         </section>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
+        <section data-markdown>
+          <textarea data-template>
           ### What do I want from an API?
 
           1. [RESTFul](https://www.django-rest-framework.org/)
@@ -293,18 +398,20 @@
             <p>Enforce one policy.</p>
           </aside>
 
-        </textarea>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
+        </textarea
+          >
+        </section>
+        <section data-markdown>
+          <textarea data-template>
         ## Django Rest Framework
         ### Serializers <!-- .element: class="fragment" -->
         ### ViewSets <!-- .element: class="fragment" -->
         ### Routers <!-- .element: class="fragment" -->
-        </textarea>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
+        </textarea
+          >
+        </section>
+        <section data-markdown>
+          <textarea data-template>
           ### ModelSerializers
 
           ```
@@ -324,22 +431,23 @@
             <p>serialization into json/xml</p>
             <p>deserialization to complex datatypes</p>
           </aside>
-        </textarea>
-      </section>
-      <section>
-
-        <section data-markdown>
-          <textarea data-template>
+        </textarea
+          >
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
           ### ModelViewSet + Routers = ❤️
 
           <aside class="notes">
           <p>Key feature to make a rest api</p>
           <p>Super easy to achive</p>
           </aside>
-          </textarea>
-        </section>
-        <section data-markdown>
-          <textarea data-template>
+          </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
             ### ViewSets
             ```
             class UserViewSet(viewsets.ViewSet):
@@ -356,10 +464,11 @@
               def destroy(self, request, pk=None):
                   pass
             ```
-          </textarea>
-        </section>
-        <section data-markdown>
-          <textarea data-template>
+          </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
           ```
           # views.py
           from django.contrib.auth.models import User
@@ -381,20 +490,22 @@
           <p>Modelviewset provides the implementation</p>
           <p>Routers provides the rest mapping</p>
           </aside>
-          </textarea>
-        </section>
-        <section data-markdown>
-          <textarea data-template>
+          </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
             ```
             In [2]: router.urls
             Out[2]:
             [<URLPattern '^customers/$' [name='user-list']>,
             <URLPattern '^customers/(?P<pk>[^/.]+)/$' [name='user-detail']>]
             ```
-          </textarea>
-        </section>
-        <section data-markdown>
-          <textarea data-template>
+          </textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
             | HTTP Method | URL | action |
             |-------------|-----|--------|
             | **GET** | customers/ | list |
@@ -403,68 +514,98 @@
             | **PUT** | customers/:id/ | update |
             | **PATCH** | customers/:id/ | partial_update |
             | **DELETE** | customers/:id/ | destroy |
-          </textarea>
-        </section>
-      </section>
-      <section>
-        <section>
-          <h2>Documentation</h2>
+          </textarea
+            >
+          </section>
         </section>
         <section>
-          <h3>Automatic queryparams doc</h3>
-          <h2 class="fragment"><a href="https://github.com/carltongibson/django-filter">Django filters</a></h2>
+          <section>
+            <h2>Documentation</h2>
+          </section>
+          <section>
+            <h3>Automatic queryparams doc</h3>
+            <h2 class="fragment">
+              <a href="https://github.com/carltongibson/django-filter"
+                >Django filters</a
+              >
+            </h2>
+          </section>
+          <section>
+            <h3>Automatic body doc</h3>
+            <h2 class="fragment">
+              <a
+                href="https://www.django-rest-framework.org/api-guide/serializers/"
+                >DRF Serializers</a
+              >
+            </h2>
+          </section>
+          <section>
+            <h2>Future</h2>
+            <p>DRF Community => OpenAPI</p>
+            <p>light dynamic clients (apistar)</p>
+          </section>
         </section>
         <section>
-          <h3>Automatic body doc</h3>
-          <h2 class="fragment"><a href="https://www.django-rest-framework.org/api-guide/serializers/">DRF Serializers</a></h2>
+          <h3>DEMO TIME</h3>
+          <p><img width="400" src="./fuck_yea.gif" alt="animals" /></p>
         </section>
         <section>
-          <h2>Future</h2>
-          <p>DRF Community => OpenAPI</p>
-          <p>light dynamic clients (apistar)</p>
+            <h3>Explore alternatives</h3>
+            <ul>
+              <li>Protocol Buffers</li>
+              <li>Json RPC</li>
+              <li>HATEOAS</li>
+            </ul>
+            <aside class="notes">Rest using HATEOAS</aside>
+          </section>
+        <section>
+          <h3>Thank you!</h3>
+          <h3>Questions?</h3>
+          <p class="float-left">
+            <svg width="80" height="80" style="fill: #f5f5f5;">
+              <image xlink:href="twitter-brands.svg" width="80" height="80" />
+            </svg>
+            <a href="https://twitter.com/santiwilly">@santiwilly</a>
+          </p>
+
+          <p class="float-right">
+            <svg width="80" height="80" style="fill: #f5f5f5;">
+              <image xlink:href="github-brands.svg" width="80" height="80" />
+            </svg>
+            <a href="https://www.github.com/woile">@woile</a>
+          </p>
+
+          <p ><img width="400" src="./questions.gif" alt="animals" /></p>
         </section>
-      </section>
-      <section>
-        <h3>DEMO TIME</h3>
-        <p><img width="400" src="./fuck_yea.gif" alt="animals" /></p>
-      </section>
-      <section>
-        <h3>Thank you!</h3>
-        <h3>Questions?</h3>
-        <p><img width="400" src="./questions.gif" alt="animals" /></p>
-      </section>
-      <section>
-        <h3>Explore alternatives</h3>
-        <ul>
-          <li>Protocol Buffers</li>
-          <li>Json RPC</li>
-          <li>HATEOAS</li>
-        </ul>
-        <aside class="notes">Rest using HATEOAS</aside>
-      </section>
+
+      </div>
     </div>
-  </div>
 
-  <script src="lib/js/head.min.js"></script>
-  <script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-  <script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-      dependencies: [
-        { src: 'plugin/markdown/marked.js' },
-        { src: 'plugin/markdown/markdown.js' },
-        { src: 'plugin/notes/notes.js', async: true },
-        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-      ],
-      markdown: {
-        smartypants: true
-      },
-      history: true
-    });
-  </script>
-</body>
-
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          {
+            src: "plugin/highlight/highlight.js",
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          }
+        ],
+        markdown: {
+          smartypants: true
+        },
+        history: true
+      });
+    </script>
+  </body>
 </html>
