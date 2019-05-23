@@ -1276,7 +1276,7 @@ reveal.js@^3.8.0:
   resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-3.8.0.tgz#9a2818e366d46237f0e64c00f50a05f2340cd50f"
   integrity sha512-MQ+UBXIIL9IyBXhkLZWb/AG5h5/BedmnHXHIEavMBawNLVfAayvTrwNlDjGn4tf/CQ2CTJR8jSyIdu4RpfoLpg==
 
-revealer@^2.1.3:
+revealer@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/revealer/-/revealer-2.1.6.tgz#72907b859be24479514551136a3d39dcb165537b"
   integrity sha512-k+XWP/Z2u0rpp2+HB79GLcOVUJsyPd5PQFRcA/LS1Wnfr6pEOPaWl5YJ/KPxXClPUyhmZVyYTSJn2oQJXzbvBw==
